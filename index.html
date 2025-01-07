@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home Security Camera Installation</title>
+
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Font Awesome (for icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-BxQCEvXVKMZCb02k/P6ktp5wa58orunX3y3vptptkznVcEihfGiUZ9Yr8sq+CMT5DW3Bt/JAq5+YDKZpJ6k9ig=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+
+  <!-- NAVY TOP BAR -->
+  <div class="top-bar">
+    Home Security Camera Installation by Sidiq Daniel
+  </div>
+
+  <!-- BLACK NAVIGATION BAR (sticky) -->
+  <div class="nav-bar">
+    <div class="nav-left">
+      <!-- Small logo (replace with your image or remove if not needed) -->
+      <img src="images/logo.png" alt="Logo" />
+      <div class="site-title">Home Security Camera Installation</div>
+    </div>
+    
+    <!-- Hamburger icon (mobile only) -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Desktop Nav links -->
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#network-segmentation">Network Segmentation</a>
+      <a href="#wifi-selection">Wi-Fi Selection</a>
+      <a href="#app-integration">App Integration</a>
+      <a href="#camera-installation">Camera Installation</a>
+      <a href="#support">Support</a>
+      <a href="#troubleshooting">Troubleshooting</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- DROPDOWN MENU (mobile) -->
+  <div class="dropdown-menu" id="dropdownMenu">
+    <a href="#home" onclick="toggleMenu()">Home</a>
+    <a href="#network-segmentation" onclick="toggleMenu()">Network Segmentation</a>
+    <a href="#wifi-selection" onclick="toggleMenu()">Wi-Fi Selection</a>
+    <a href="#app-integration" onclick="toggleMenu()">App Integration</a>
+    <a href="#camera-installation" onclick="toggleMenu()">Camera Installation</a>
+    <a href="#support" onclick="toggleMenu()">Support</a>
+    <a href="#troubleshooting" onclick="toggleMenu()">Troubleshooting</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+
+<!-- HERO SECTION (approx. 90% of viewport) -->
+<section class="hero" id="home">
+    <!-- Hero content (title, buttons, etc.) -->
+    <div class="hero-content">
+      <h1>Home Security Solutions</h1>
+      <div class="btns">
+        <a href="#details">View Details</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  
+    <!-- Landing icons pinned at the bottom of the hero -->
+    <div class="landing-icons-row">
+      <div class="icon-card">
+        <i class="fas fa-mobile-alt"></i>
+        <h4>Total Control</h4>
+        <p>Take control of your home</p>
+      </div>
+  
+      <div class="icon-card">
+        <i class="fas fa-shield-alt"></i>
+        <h4>Full Protection</h4>
+        <p>Customize security to fit your needs</p>
+      </div>
+  
+      <div class="icon-card">
+        <i class="fas fa-home"></i>
+        <h4>Home Automation</h4>
+        <p>Simplify your life with automation</p>
+      </div>
+  
+      <div class="icon-card">
+        <i class="fas fa-user-secret"></i>
+        <h4>ID Theft Protection</h4>
+        <p>Protect your identity</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTIONS FOR EACH LINK ============ -->
+  <!-- Additional content is hidden off-screen until the user scrolls -->
+
+  <!-- NETWORK SEGMENTATION SECTION -->
+  <section class="content-section" id="network-segmentation">
+    <h2>Network Segmentation</h2>
+    <p>
+      Properly segmenting your home network is crucial. We create a secure subnet for 
+      cameras so they are isolated from your main devices. This reduces risk of intrusion 
+      or data theft.
+    </p>
+    <ul>
+      <li>Create separate Guest network or VLAN for IoT devices</li>
+      <li>Use strong Wi-Fi encryption (WPA2/WPA3)</li>
+      <li>Update router firmware regularly</li>
+    </ul>
+  </section>
+
+  <!-- WI-FI SELECTION SECTION -->
+  <section class="content-section" id="wifi-selection">
+    <h2>Wi-Fi Selection</h2>
+    <p>
+      We evaluate your router’s bandwidth and choose the right frequency to ensure cameras 
+      stay online. Often 2.4GHz has better range through walls, while 5GHz provides faster speed 
+      but shorter range. 
+    </p>
+    <p>
+      Our approach:
+    </p>
+    <ol>
+      <li>Check 2.4GHz signals for coverage throughout the house</li>
+      <li>Balance speed vs. distance for optimal camera streaming</li>
+      <li>Minimize interference from other wireless networks</li>
+    </ol>
+  </section>
+
+  <!-- APP INTEGRATION SECTION -->
+  <section class="content-section" id="app-integration">
+    <h2>App Integration</h2>
+    <p>
+      Control your cameras from anywhere. Our integration process includes: 
+    </p>
+    <ul>
+      <li>Installing the manufacturer’s smartphone app</li>
+      <li>Linking your cameras to the cloud for remote live view</li>
+      <li>Setting up notifications and motion alerts</li>
+      <li>Enabling two-way talk, so you can speak through the camera</li>
+    </ul>
+  </section>
+
+  <!-- CAMERA INSTALLATION SECTION (with simple auto-rotating mini-carousel) -->
+  <section class="content-section" id="camera-installation">
+    <h2>Camera Installation</h2>
+    <p>
+      We carefully mount cameras to get the perfect angle. Below is a quick example of 
+      typical steps we take, shown in a rotating slideshow:
+    </p>
+    <div class="carousel">
+      <div class="carousel-slide slide1 active">
+        <h3>Step 1: Mounting Bracket</h3>
+        <p>Secure the bracket to the desired location (wall, ceiling) with anchors and screws.</p>
+      </div>
+      <div class="carousel-slide slide2">
+        <h3>Step 2: Adjusting Angle</h3>
+        <p>Attach the camera to the bracket, then tweak vertical/horizontal angles 
+           to capture all high-traffic areas.</p>
+      </div>
+      <div class="carousel-slide slide3">
+        <h3>Step 3: Testing & Fine Tuning</h3>
+        <p>Review live video feed to confirm coverage. Adjust positioning or 
+           set up IR modes as needed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORT SECTION -->
+  <section class="content-section" id="support">
+    <h2>Support</h2>
+    <p>
+      We provide ongoing support after installation. Whether you need help updating firmware, 
+      changing Wi-Fi passwords, or reconfiguring your system, we’re here:
+    </p>
+    <ul>
+      <li>24/7 phone & email support</li>
+      <li>Remote assistance for quick troubleshooting</li>
+      <li>In-person visits for hardware replacements</li>
+    </ul>
+  </section>
+
+  <!-- TROUBLESHOOTING SECTION -->
+  <section class="content-section" id="troubleshooting">
+    <h2>Troubleshooting</h2>
+    <p>
+      Encountered issues with viewpoint, connectivity, or notifications? Here are some typical 
+      steps we take:
+    </p>
+    <ol>
+      <li>Check signal strength and reposition the camera or add a Wi-Fi extender.</li>
+      <li>If camera angle is limited, install a wedge or bracket for better coverage.</li>
+      <li>Re-run network setup if camera is offline or unresponsive.</li>
+      <li>Review camera logs for error codes or conflicting IP addresses.</li>
+    </ol>
+    <p>
+      Often, small adjustments in mounting location, wedge installation, or advanced bracket 
+      positioning can vastly improve coverage and clarity.
+    </p>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="content-section" id="contact">
+    <h2>Contact Us</h2>
+    <p>
+      This area can be replaced with your actual contact form or details. 
+      For example, you could include:
+    </p>
+    <ul>
+      <li>Phone number</li>
+      <li>Business hours</li>
+      <li>Email address</li>
+      <li>Contact form for inquiries</li>
+    </ul>
+  </section>
+
+  <!-- ADDITIONAL DETAILS SECTION (if you want to show “View Details” anchor) -->
+  <section class="content-section" id="details">
+    <h2>Additional Details</h2>
+    <p>
+      More info about your services, pricing, or features can go here. 
+      This is referenced by the “View Details” button in the hero section.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    &copy; 2025 Home Security by Sidiq Daniel. All rights reserved.
+  </footer>
+
+  <!-- JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
