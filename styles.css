@@ -1,0 +1,764 @@
+/* =========================================
+  GLOBAL RESET & BODY STYLES
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+
+  background-color: #f8f8f8;
+  scroll-behavior: smooth; /* for smooth in-page navigation */
+}
+
+/* =========================================
+  TOP NAVY BAR
+========================================= */
+.top-bar {
+  background-color: #0a1f44; /* Navy color */
+  color: #fff;
+  height: 50px;
+  display: flex; /* Enables Flexbox layout */
+  align-items: center; /* Vertically centers the text */
+  justify-content: center; /* Horizontally centers the text */
+  font-size: 14px;
+  padding: 0;
+}
+
+/* =========================================
+  BLACK NAV BAR (STICKY)
+========================================= */
+.nav-bar {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 9999; /* Ensure nav stays on top when scrolling */
+  padding: 10px 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* box shadow */
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+.nav-left img {
+  height: 40px;
+  margin-right: 10px;
+}
+.site-title {
+  color: #fff;
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px; /* more spacing so text isn't jammed */
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 0;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffa500; /* Example hover color */
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none; /* Hidden on desktop */
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  margin-top: 0; /* Remove any extra spacing above */
+  padding: 0; /* Remove padding if any */
+  position: fixed; /* Ensures it stays fixed in the viewport */
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  background-color: #000;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9998; /* Ensure it appears above other elements */
+  transition: opacity 0.3s ease; /* Optional: Smooth appearance */
+}
+.dropdown-menu.show {
+  display: flex; /* Show dropdown menu */
+  opacity: 1; /* Ensure it's visible */
+}
+
+.dropdown-item {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: 1px solid #333;
+}
+
+.dropdown-item:hover {
+  background-color: #333;
+}
+
+
+/* Ensure Submenu Items Display Correctly */
+.has-submenu .submenu {
+  display: none;
+  flex-direction: column;
+  background-color: #111; /* Slightly lighter than navbar for visibility */
+  position: relative;
+  margin-top: 10px;
+  width: 100%; /* Match the parent dropdown width */
+}
+
+.has-submenu .submenu.show {
+  display: flex;
+}
+
+.has-submenu span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submenu-item {
+  color: #fff;
+  padding: 12px 32px;
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: 1px solid #333;
+}
+
+.submenu-item:hover {
+  background-color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide desktop nav links on mobile */
+  }
+  .hamburger {
+    display: block; /* Show hamburger on mobile */
+  }
+
+  /* Adjust dropdown menu position if needed */
+  .dropdown-menu {
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    min-height: 80vh; /* Reduce height to 65% of the viewport height on mobile */
+  }
+}
+
+
+
+
+
+/*********************************************
+  HERO SECTION (~90% viewport height)
+**********************************************/
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 88vh; /* Takes about 90% of the viewport height */
+  background: url('images/190208501705630130.9411.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;  /* Center all child elements vertically */
+  align-items: center;      /* Center all child elements horizontally */
+  text-align: center;
+  color: #fff;
+}
+
+/* Center the hero content fully */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  margin-top: -50px;
+  margin-bottom: 0; /* Remove any extra margin that might push the buttons down */
+}
+
+/* Styling for the heading */
+.hero-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px #000;
+  padding: 0 20px; /* Add padding on the left and right */
+  text-align: center; /* Ensure the text is centered */
+  box-sizing: border-box; /* Ensure padding doesn't overflow the container */
+}
+
+/* Button container styling */
+.hero-content .btns {
+  display: flex;
+  gap: 15px;
+  justify-content: center; /* Ensures buttons are horizontally centered */
+  align-items: center; /* Align items vertically (if multi-line text appears) */
+}
+
+/* Styling for the buttons */
+.hero-content .btns a {
+  background-color: #0a1f44; /* navy or your chosen color */
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover effect for buttons */
+.hero-content .btns a:hover {
+  background-color: #fff;
+  color: #0a1f44;
+}
+
+/*********************************************
+  ICONS ROW AT HERO BOTTOM
+**********************************************/
+.landing-icons-row {
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    right: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2); 
+    /* Shadow “above” the icons so they look 
+       like a raised bar at the bottom. */
+    z-index: 2; /* Above the hero image, behind the hero text */
+  }
+  
+  .icon-card {
+    text-align: center;
+    max-width: 120px; 
+    margin: 0 10px;
+  }
+  
+  .icon-card i {
+    font-size: 32px;
+    color: #0a1f44;
+    margin-bottom: 8px;
+  }
+  
+  .icon-card h4 {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .icon-card p {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  /* =========================================
+     CONTENT SECTIONS
+  ========================================= */
+  .content-section {
+    background-color: #f8f8f8;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .content-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .content-section p {
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .content-section ul,
+  .content-section ol {
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    text-align: left;
+  }
+  .content-section li {
+    margin-bottom: 8px;
+  }
+  
+  /* Example style for your auto-rotating mini-carousel */
+  .carousel {
+    max-width: 600px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    height: 140px; /* fixed height for simplicity */
+  }
+  .carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    color: #333;
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .carousel-slide h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  .carousel-slide.active {
+    opacity: 1; /* only active slide is visible */
+  }
+  
+  /* FOOTER */
+  .site-footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+  
+ 
+  .site-footer {
+    background-color: #000; /* Dark background for the footer */
+    color: #fff; /* White text for contrast */
+    text-align: center; /* Center align all content */
+    padding: 20px 10px; /* Add spacing inside the footer */
+    font-size: 14px; /* Adjust font size for readability */
+    line-height: 1.6; /* Space out lines slightly */
+  }
+  
+  .footer-contact {
+    display: flex; /* Use flexbox for icons and text */
+    justify-content: center; /* Center the contact items */
+    gap: 20px; /* Add spacing between email and phone */
+    margin-bottom: 10px; /* Space below the contact row */
+  }
+  
+  .footer-contact i {
+    margin-right: 5px; /* Add space between icon and text */
+  }
+  
+  .footer-location {
+    margin-bottom: 10px; /* Space below the location text */
+  }
+  
+  .footer-text {
+    font-size: 12px; /* Slightly smaller text for the copyright notice */
+  }
+
+
+  /* =========================================
+  CAMERA INSTALLATION SECTION - 101
+========================================= */
+.content-section-101 {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hardware-cards-101 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.card-101 {
+  background-color: #f0f8ff; /* Light blue background */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-101 i {
+  color: #0a1f44;
+  margin-bottom: 15px;
+}
+
+.card-101 h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.carousel-101 {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: block; /* Ensure all items are displayed */
+}
+
+.carousel-slide-101 {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px; /* Add spacing between steps */
+}
+
+.carousel-slide-101 img {
+  width: 100%;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 4px;
+}
+
+/* Add navigation arrows if desired */
+.carousel-101::before,
+.carousel-101::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #0a1f44;
+  cursor: pointer;
+}
+
+.carousel-101::before {
+  left: 10px;
+}
+
+.carousel-101::after {
+  right: 10px;
+}
+
+/* =========================================
+  CONFIGURATION & KEY FEATURES SECTION - 102
+========================================= */
+.content-section-102 {
+  background-color: #f8f8f8;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.features-cards-102 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.card-102 {
+  background-color: #e6f2ff; /* Slightly lighter blue */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 220px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-102 i {
+  color: #0a1f44;
+  margin-bottom: 15px;
+}
+
+.card-102 h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.config-table-102 {
+  max-width: 800px;
+  margin: 40px auto;
+  overflow-x: auto;
+}
+
+.config-table-102 table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.config-table-102 th,
+.config-table-102 td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.config-table-102 th {
+  background-color: #0a1f44;
+  color: #fff;
+}
+
+.config-table-102 td {
+  background-color: #fff;
+  color: #333;
+}
+
+.config-table-102 tr:nth-child(even) td {
+  background-color: #f2f2f2;
+}
+
+/* =========================================
+  NETWORK SEGMENTATION SECTION - 103
+========================================= */
+.content-section-103 {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.network-diagram-103 {
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.network-diagram-103 img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.network-diagram-103 p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.segmentation-list-103 {
+  max-width: 700px;
+  margin: 40px auto;
+  text-align: left;
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.segmentation-list-103 li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* =========================================
+  WI-FI SELECTION SECTION - 104
+========================================= */
+.content-section-104 {
+  background-color: #f8f8f8;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.wifi-table-104 {
+  max-width: 800px;
+  margin: 40px auto;
+  overflow-x: auto;
+}
+
+.wifi-table-104 table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.wifi-table-104 th,
+.wifi-table-104 td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.wifi-table-104 th {
+  background-color: #0a1f44;
+  color: #fff;
+}
+
+.wifi-table-104 td {
+  background-color: #fff;
+  color: #333;
+}
+
+.wifi-table-104 tr:nth-child(even) td {
+  background-color: #f2f2f2;
+}
+
+.wifi-benefits-104 {
+  max-width: 700px;
+  margin: 40px auto;
+  text-align: left;
+  list-style-type: circle;
+  padding-left: 20px;
+}
+
+.wifi-benefits-104 ul {
+  font-size: 16px;
+}
+
+.wifi-benefits-104 li {
+  margin-bottom: 10px;
+}
+
+/* =========================================
+  APP INTEGRATION SECTION - 105
+========================================= */
+.content-section-105 {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.app-features-cards-105 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.card-105 {
+  background-color: #e6f2ff; /* Light blue background */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 220px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-105 i {
+  color: #0a1f44;
+  margin-bottom: 15px;
+}
+
+.card-105 h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.realtime-alerts-105 {
+  margin: 40px 0;
+}
+
+.realtime-alerts-105 h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.realtime-alerts-105 p {
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+  font-size: 16px;
+}
+
+/* =========================================
+  TROUBLESHOOTING SECTION - 106
+========================================= */
+.content-section-106 {
+  background-color: #f8f8f8;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.troubleshooting-steps-106 {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0px 30px;
+  text-align: left;
+  list-style-type: decimal;
+}
+
+.troubleshooting-steps-106 li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.faq-106 {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: left;
+}
+
+.faq-106 h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.faq-item-106 {
+  margin-bottom: 20px;
+}
+
+.faq-item-106 h4 {
+  font-size: 18px;
+  color: #0a1f44;
+  margin-bottom: 10px;
+}
+
+.faq-item-106 p {
+  font-size: 16px;
+  color: #333;
+}
+
+/* =========================================
+  CONTACT & SUPPORT SECTION - 107
+========================================= */
+.content-section-107 {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.support-cards-107 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.card-107 {
+  background-color: #e6f2ff; /* Light blue background */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 220px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-107 i {
+  color: #0a1f44;
+  margin-bottom: 15px;
+}
+
+.card-107 h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.contact-portfolio-107 {
+  margin-top: 40px;
+}
+
+.btn-portfolio-107 {
+  background-color: #0a1f44;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-portfolio-107:hover {
+  background-color: #ffa500;
+  color: #0a1f44;
+}
